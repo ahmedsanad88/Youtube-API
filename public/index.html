@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Sanad-Web</title>
+</head>
+<body class="min-h-screen text-gray-800 bg-white dark:bg-gray-800 dark:text-gray-100 overflow-hidden">
+    <div id="container" class="absolute z-10 w-full flex items-center justify-end pr-5 bg-transparent text-gray-100 dark:bg-blue-900 h-14">
+    <!-- start adding toggle button for dark mode -->
+    <div class="flex justify-end items-center space-x-2 order-2">
+        <span class="text-sm text-gray-200 dark:text-gray-500">Light</span>
+        <div>
+            <input type="checkbox" name="" id="toggle" class="hidden">
+            <label for="toggle" class="cursor-pointer">
+                <div class="w-9 h-6 flex items-center bg-gray-500 dark:bg-gray-600 rounded-full p-1">
+                    <div class="w-8 h-4 flex items-center bg-green-400 dark:bg-green-500 rounded-full ">
+                        <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-200 ease-in-out"></div>
+                    </div>
+                </div>
+            </label>
+        </div>
+        <span class="text-sm text-gray-600 dark:text-gray-200">Dark</span>
+    </div>
+    <!-- end adding toggle button for dark mode -->
+        <!-- mobile nav bar manu button -->
+        <div class="md:hidden flex flex-1 pl-5 items-center text-indigo-600">
+            <button class="manu__btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- mobile nav bar manu button -->
+    <div class="hidden md:flex nav__main flex-1 space-x-2 items-center align-middle">
+        <img src="images/logo.png" class="bg-black w-10 h-10 m-3 rounded-full" alt="Logo">
+        <h5 class="text-xl font-medium text-yellow-400 dark:text-white">Top 10 Youtube Search </h5>
+    </div>
+    </div>
+    <!-- start of main body -->
+    <div class="bg-main-bg bg-no-repeat bg-cover h-screen w-screen">
+       <div class="z-10 backdrop-filter backdrop-brightness-100 dark:bg-black h-full w-full flex flex-col place-content-center items-center">
+            <div class="w-2/3 flex flex-col">
+                <form id="search-form" class="input-group" autocomplete="off">
+                    <input type="text" class="form-control dark:bg-black dark:text-white" id="form_input" placeholder="Search for a video...." aria-label="Search for Video" aria-describedby="button-addon2">
+                    <button class="btn btn-outline-primary dark:bg-gray-700 dark:text-white dark:hover:bg-blue-400 border-gray-300" type="submit" value="form_input" id="button-addon2">Search</button>
+                </form>
+                <p class="hidden text-red-400" id="error">Please enter what would you like to search about?</p>
+            </div>
+            <div class="h-4/6 w-4/5 md:h-5/6 md:w-5/6 rounded-xl bg-indigo-100 bg-opacity-60 dark:bg-opacity-30 flex flex-col overflow-y-auto">
+                <div id="videos" class="w-full flex-1 flex flex-wrap place-content-evenly pb-5 pt-5">
+                    <p id="loading" class="hidden text-xl font-medium text-gray-600 dark:text-white animate-spin">
+                        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                        <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+                            s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+                            c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
+                        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+                            C22.32,8.481,24.301,9.057,26.013,10.047z">
+                            <animateTransform attributeType="xml"
+                            attributeName="transform"
+                            type="rotate"
+                            from="0 20 20"
+                            to="360 20 20"
+                            dur="0.5s"
+                            repeatCount="indefinite"/>
+                            </path>
+                        </svg>
+                    </p>
+                </div>
+            </div>
+       </div> 
+    </div>   
+    <!-- end of main body -->
+
+    <!-- mobile view -->
+
+    <div class="hidden md:hidden absolute z-30 top-14 mobile__manu h-5/6 w-screen bg-indigo-800 bg-opacity-75 flex flex-col justify-center space-y-12 items-center animate-drop">
+        <img src="images/logo.png" class="bg-black w-10 h-10 m-3 rounded-full" alt="Logo">
+        <h5 class="text-xl font-medium text-gray-400 dark:text-white">Top 10 Youtube Search </h5>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

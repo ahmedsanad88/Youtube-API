@@ -1,0 +1,14 @@
+{
+  "name": "youtube-api",
+  "version": "1.0.0",
+  "description": "youtube-api ",
+  "main": "app.js",
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o dist/style.css"
+  },
+  "author": "ahmed sanad",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^2.1.2"
+  }
+}

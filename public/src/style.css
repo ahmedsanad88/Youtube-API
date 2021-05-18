@@ -1,0 +1,15 @@
+/* ./your-css-folder/styles.css */
+@tailwind base;
+
+#toggle:checked~label div.toggle-dot {
+    @apply translate-x-3
+}
+
+#navClick:hover {
+    @apply rotate-90
+}
+
+
+@tailwind components;
+
+@tailwind utilities;
