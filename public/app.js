@@ -28,7 +28,7 @@ const search = document.getElementById("search-form");
 
 const inputField = document.getElementById("form_input");
 
-const API_KEY = "AIzaSyB5b0g1JcS1FQUtgFVV0yfz_0SGHEqVOkM";
+const API_KEY = "ADDING YOUR API KEY";
 
 let video = '';
 
