@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "api-73098",
+    "site": "api-00000",
     "public": "public",
     "ignore": [
       "firebase.json",
